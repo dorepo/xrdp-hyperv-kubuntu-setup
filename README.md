@@ -27,12 +27,16 @@ This script automates the installation and configuration of **xrdp** on **Kubunt
    chmod +x install-xrdp.sh
    ./install-xrdp.sh
 
-3. **Enable enhanced session on the host (Hyper-V):**
+3. **Enable enhanced session on the host (Hyper-V):** <br>
 Open PowerShell as Administrator and run:
    ```powershell
    Set-VM -VMName "YourVMName" -EnhancedSessionTransportType HvSocket
 
-4. **Reboot your Kubuntu VM to apply changes.**
+4. **Enable guest service on the host (Hyper-V):** <br>
+Open PowerShell as Administrator and run:
+   ```powershell
+   Enable-VMIntegrationService -VMName "YourVMName" -Name "Guest Service Interface"
+5. **Reboot your Kubuntu VM to apply changes.**
 
 
 # 📄 License
